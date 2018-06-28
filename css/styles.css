@@ -355,7 +355,7 @@ nav h1 a {
     height: 400px;
   }
 	.inside #map-container {
-	  height: 100%;
+	  height: calc(100% - 115px);
 	  width: 50%;
 	  position: fixed;
 	  right: 0;
