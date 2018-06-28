@@ -148,6 +148,7 @@ resetRestaurants = (restaurants) => {
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
+  ul.setAttribute('aria-label', 'restaurants list');
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });
@@ -159,6 +160,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant = self.restaurant) => {
   const li = document.createElement('li');
+  li.setAttribute('aria-label', restaurant.name);
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
@@ -179,6 +181,7 @@ createRestaurantHTML = (restaurant = self.restaurant) => {
   li.append(address);
 
   const more = document.createElement('a');
+  more.setAttribute('aria-label', restaurant.name+' view details');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
