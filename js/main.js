@@ -4,6 +4,8 @@ let restaurants,
 var newMap
 var markers = []
 
+
+// TODO: Add aria-labels to li items in the restaurants list?
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
