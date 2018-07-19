@@ -10,10 +10,24 @@ var markers = []
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
+  registerServiceWorker();
   initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
 });
+
+/**
+ * Register a Service Worker to make the site work offline.
+ */
+registerServiceWorker = () => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(function() {
+      console.log('Registration worked!');
+    }).catch(function() {
+      console.log('Registration failed!');
+    });
+  }
+}
 
 /**
  * Fetch all neighborhoods and set their HTML.

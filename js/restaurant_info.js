@@ -4,8 +4,22 @@ var newMap;
  * Initialize map as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
+  registerServiceWorker();
   initMap();
 });
+
+/**
+ * Register a Service Worker to make the site work offline.
+ */
+registerServiceWorker = () => {
+  if(navigator.serviceWorker) {
+    navigator.serviceWorker.register('/sw.js').then(function() {
+      console.log('Registration worked!');
+    }).catch(function() {
+      console.log('Registration failed!');
+    });
+  }
+}
 
 /**
  * Initialize leaflet map
