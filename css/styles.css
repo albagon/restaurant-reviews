@@ -26,7 +26,7 @@ td, th{
 	vertical-align: top;
 }
 
-ul, li {
+ul, li, ol {
 	font: 10pt Arial, Helvetica, sans-serif;
 	color: #333;
 }
@@ -416,7 +416,7 @@ nav h1 a {
 	.inside #footer {
 	  width: 50%;
 	}
-  
+
 	#footer {
 	  padding: 25px;
 	}
